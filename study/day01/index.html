@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery课程第一节</title>
+	<link rel="stylesheet" href="../lib/global.css">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<section class="app">
+		<h1>标签选择器</h1>
+		<h2>点击生成第四个li标签</h2>
+		<ul>
+			<li>第一个li标签</li>
+			<li>第二个li标签</li>
+		</ul>
+	</section>
+<script type="text/javascript" src="../lib/common.js"></script>
+<script>
+seajs.config({
+	base: '/',
+	alias: {
+        "main":"/day01/index"
+    },
+    map: [
+		[ /^(.*\.(?:css|js))(.*)$/i, '$1?1453098258628' ]
+	]
+});
+seajs.use("main",function(main){
+	main.init()
+});
+</script>
+</body>
+</html>

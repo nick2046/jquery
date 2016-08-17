@@ -8,12 +8,23 @@ define(function (require, exports, module){
 		events: function(){
 			var me = this;
 
+			$('li', me.$el ).on('addOne',function(e){
+				alert( $(e.currentTarget).index() );
+			});
+
 			$('h1', me.$el ).click(function(e){
 				alert( "弹出" + $(e.currentTarget).html() );
 			});
 
 			$('h2', me.$el ).click(function(e){
-				$('ul', me.$el ).append( '<li>自动生成的li标签</li>' );
+				var aEl = document.createElement('li');
+				aEl.style.color = "red";
+				aEl.innerText = '测试';
+				var $ael = $('<div style="color: red;"><a>这是一个a标签</a></div>');
+				$ael.css({'color': 'green'});
+				alert( $ael.html() );
+				$('ul', me.$el ).append( $ael );
+				// $('ul', me.$el ).append( '<li>自动生成的li标签</li>' );
 				$(e.currentTarget).off();
 			});
 

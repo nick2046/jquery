@@ -17,4 +17,6 @@ var div=$(".className");
     div.animate({width:'100px',opacity:'0.8'},"slow");
 
 $('.className').stop() //停止当前动画效果
+
+$('h2').css({'transition': 'transform 2s'}).css({'transform': 'rotate(190deg)'})
 ````

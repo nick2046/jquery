@@ -24,6 +24,7 @@
     例：$('ul li').removeClass('className');
 2.链式操作：$(dom标识).操作函数().操作函数().操作函数().操作函数()
     例：$('ul li').removeClass('className').siblings().addClass('className').show();
+3.演示dom对象和jQuery对象的区别及转换
 ````
 ### $选择器用法、性能、优先级别  
 ````html
@@ -56,4 +57,8 @@
         $('ul').on('click','li',function(e){
             // dosomething
         })
+````
+### 作业
+````html
+多个div元素，分别以id class 标签名 属性等，获取jquery对象，并绑定点击事件，抛出文本提示信息
 ````

@@ -21,3 +21,5 @@ $('.className').stop() //停止当前动画效果
 $('h2').css({'position': 'relative','transition': 'transform 2s'}).css({'transform': 'rotate(190deg)'})
 $('h2').css({'position': 'relative','transition': 'transform 2s'}).css({'transform': 'rotateX(190deg)'})//3D
 ````
+#### [ajax——XMLHttpRequest对象](http://www.w3school.com.cn/ajax/index.asp)
+

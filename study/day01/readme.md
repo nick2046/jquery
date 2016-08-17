@@ -3,12 +3,13 @@
 ````html
 1.体积小，灵巧
 2.简化js操作
-    例：js  document.getElementById('mainNode') && jQuery  $('#mainNode')  简洁方便
+    例：js  document.getElementById('mainNode') V jQuery  $('#mainNode')  简洁方便
 3.超强的兼容性：各浏览器通用
     例：js原生语法
         var node = document.getElementById('id');
         node.addEventListener(……)//firefox chrome
         node.attachEvent(……)//IE
+        // 如果是用class或tag取值，还需要对返回的数组进行遍历绑定事件
         jQuery封装后
         $('#id').on(……)
 4.基于上述3，封装并提供了各种方法和函数库

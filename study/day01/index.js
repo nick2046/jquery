@@ -11,10 +11,11 @@ define(function (require, exports, module){
 			$('li', me.$el ).on('addOne',function(e){
 				alert( $(e.currentTarget).index() );
 			});
-
-			$('h1', me.$el ).click(function(e){
-				alert( "弹出" + $(e.currentTarget).html() );
-			});
+			// document.getElementById('h1').addEventListener('click',function(){alert('by id');},true);
+			document.getElementsByTagName('h1')[0].addEventListener('click',function(){alert('by tag name');},true);
+			// $('h1', me.$el ).click(function(e){
+			// 	alert( "弹出" + $(e.currentTarget).html() );
+			// });
 
 			$('h2', me.$el ).click(function(e){
 				var aEl = document.createElement('li');
@@ -26,6 +27,7 @@ define(function (require, exports, module){
 				$('ul', me.$el ).append( $ael );
 				// $('ul', me.$el ).append( '<li>自动生成的li标签</li>' );
 				$(e.currentTarget).off();
+				e.stopPropagation();
 			});
 
 			// $('ul li').click(function(e){

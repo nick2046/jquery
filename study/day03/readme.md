@@ -11,3 +11,8 @@ filter:     对集合过滤查找 例：$('ul li').filter('.className')
 find:       对集合的子集进行过滤查找
 ````
 #### extend函数 [参考文档地址](http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html)
+````html
+浅复制      jQuery.extend( { a : { a : "a" } }, { a : { b : "b" } } );
+深复制      jQuery.extend(true, { a : { a : "a" } }, { a : { b : "b" } } );
+$.extend( true ,dest,src1,src2,src3...)
+````

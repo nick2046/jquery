@@ -10,3 +10,4 @@ each:       $('.item-box').closest('.group-box').each(function(item,index){$(ite
 filter:     对集合过滤查找 例：$('ul li').filter('.className')
 find:       对集合的子集进行过滤查找
 ````
+#### extend函数 [参考文档地址](http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html)

@@ -8,7 +8,12 @@ removeAttr attr hasClass
 ````
 #### css操作  [参考文档地址](http://www.w3school.com.cn/jquery/jquery_ref_css.asp)
 ````html
-css() width() heigth()
-position() scrollTop() scrollLeft()
-offset() offsetParent()
+css() 
+width() 
+heigth()
+position()  相对父级位置
+scrollTop() 
+scrollLeft()
+offset() 相对文档位置
+offsetParent() 元素最近的一个定位父级位置
 ````

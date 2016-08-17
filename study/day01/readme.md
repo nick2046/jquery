@@ -1,4 +1,20 @@
 ## jQuery第一天课程内容
+### $jQuery优势亮点
+````html
+1.体积小，灵巧
+2.简化js操作
+    例：js  document.getElementById('mainNode') && jQuery  $('#mainNode')  简洁方便
+3.超强的兼容性：各浏览器通用
+    例：js原生语法
+        var node = document.getElementById('id');
+        node.addEventListener(……)//firefox chrome
+        node.attachEvent(……)//IE
+        jQuery封装后
+        $('#id').on(……)
+4.基于上述3，封装并提供了各种方法和函数库
+5.链式操作，方便$('#id').removeClass().hide().siblings().addClass().show()……;
+6.ajax封装http请求，并解决原生xhr对象在ie和其它浏览器上的兼容性
+````
 ### $基础语法规则  
 ````html 
 1.语法结构：$(dom标识).操作函数()

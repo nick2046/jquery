@@ -14,6 +14,7 @@
 4.基于上述3，封装并提供了各种方法和函数库
 5.链式操作，方便$('#id').removeClass().hide().siblings().addClass().show()……;
 6.ajax封装http请求，并解决原生xhr对象在ie和其它浏览器上的兼容性
+7.$(document).ready(function(){……}); 简化 $(function(){……});
 ````
 ### $基础语法规则  
 ````html 

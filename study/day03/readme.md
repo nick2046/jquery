@@ -7,4 +7,6 @@ andSelf:    $('.app').find('ul li').andSelf() 返回包括ul li集合+className=
 closest:    $('.item-box').closest('.group-box') 向上查找父级className为group-box的集合
 each:       $('.item-box').closest('.group-box').each(function(item,index){$(item).addClass("className")}); 
             遍历数据，函数参数中item需要修改为jQuery结构
+filter:     对集合过滤查找 例：$('ul li').filter('.className')
+find:       对集合的子集进行过滤查找
 ````

@@ -18,5 +18,5 @@ var div=$(".className");
 
 $('.className').stop() //停止当前动画效果
 
-$('h2').css({'transition': 'transform 2s'}).css({'transform': 'rotate(190deg)'})
+$('h2').css({'position': 'relative','transition': 'transform 2s'}).css({'transform': 'rotate(190deg)'})
 ````

@@ -116,3 +116,10 @@ gulp.task('localhost', function() {
         port: 8090
     });
 });
+
+gulp.task('localhost2', function() {
+    plugins.connect.server({
+        root: './music/',
+        port: 8092
+    });
+});

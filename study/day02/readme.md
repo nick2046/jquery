@@ -17,3 +17,7 @@ scrollLeft()
 offset() 相对文档位置
 offsetParent() 元素最近的一个定位父级位置
 ````
+#### 作业
+````html
+jquery制作轮播图 利用css3和定位，实现左右动态滑动效果
+````

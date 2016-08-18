@@ -23,3 +23,8 @@ $('h2').css({'position': 'relative','transition': 'transform 2s'}).css({'transfo
 ````
 #### [ajax——XMLHttpRequest对象](http://www.w3school.com.cn/ajax/index.asp)
 
+### 作业
+````html
+jQuery发起ajax请求
+````
+

@@ -15,7 +15,7 @@
 		</div>
 		<div class="navContent">
 			<div class="content info">这是一个简单的JQ切换效果。</div>
-			<div class="content lee" style="display:none;">李老师，药不能停，药不能停</div>
+			<div class="content lee" style="display:none;">药不能停，药不能停</div>
 			<div class="content jiankang" style="display:none;">生活不止眼前的苟且，还得赚钱</div>
 		</div>
 	</section>
@@ -35,6 +35,10 @@
 			$(e.currentTarget).addClass('active').siblings().removeClass('active');
 			$('.' + $(e.currentTarget).data('type') ).show().siblings().hide();
 		});
+		$(document).keydown(function(e){
+			debugger;
+			console.log( e.keyCode );
+		})
 	})
 </script>
 </body>

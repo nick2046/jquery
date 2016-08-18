@@ -16,3 +16,7 @@ find:       对集合的子集进行过滤查找
 深复制      jQuery.extend(true, { a : { a : "a" } }, { a : { b : "b" } } );
 $.extend( true ,dest,src1,src2,src3...)
 ````
+#### 作业
+````html
+遍历节点，取得数据，并放在数组或对象里面
+````

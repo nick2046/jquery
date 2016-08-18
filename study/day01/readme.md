@@ -58,7 +58,11 @@
             // dosomething
         })
 ````
-### 作业
+### 练习
 ````html
 多个div元素，分别以id class 标签名 属性等，获取jquery对象，并绑定点击事件，抛出文本提示信息
+````
+### 作业
+````html
+table切换 如demo01
 ````

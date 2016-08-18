@@ -37,6 +37,8 @@ define(function (require, exports, module){
 			$('ul', me.$el ).on('click','li',function(e){
 				alert( "弹出" + $(e.currentTarget).html() );
 			});
+
+			// $('#h1').css({position: 'relative','transition':'transform 2s'}).css({'transform':'rotate(10deg)'})
 			// $('ul li').not(':eq(2)').click(function(e){
 			// 	alert( "弹出" + $(e.currentTarget).html() );
 			// });

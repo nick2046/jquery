@@ -1,1 +1,6 @@
-## jquery + angularjs + nodejs + gulp + 性能安全
+## jQuery
+````html
+jQuery 是一个 JavaScript 库。
+jQuery 极大地简化了 JavaScript 编程。
+jQuery 很容易学习。
+````

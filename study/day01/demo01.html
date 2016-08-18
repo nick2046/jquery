@@ -21,24 +21,17 @@
 	</section>
 <script type="text/javascript" src="../lib/common.js"></script>
 <script>
-	
 	window.onload = function(){
 		console.log( +new Date() );
 	}
-
 	$(function(){
 		console.log( +new Date() );
 	});
-
 	$(function(){
 		$('.demo01').on('click','.navTable span',function(e){
 			$(e.currentTarget).addClass('active').siblings().removeClass('active');
 			$('.' + $(e.currentTarget).data('type') ).show().siblings().hide();
 		});
-		$(document).keydown(function(e){
-			debugger;
-			console.log( e.keyCode );
-		})
 	})
 </script>
 </body>

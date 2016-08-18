@@ -28,7 +28,7 @@ gulp.task('less', function() {
             browsers: ['last 20 versions'],
             cascade: true
         }))
-        .pipe(plugins.minifyCss())
+        // .pipe(plugins.minifyCss())
         .pipe(gulp.dest( srcPath ))
         .pipe(plugins.notify({
             title: 'Gulp',

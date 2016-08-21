@@ -28,18 +28,8 @@ app.controller("parentCtrl",function($scope,$location){
         {"name":"music10.mp3","value":"TIMEZ - 那些我们一起恋过的青春.mp3"},{"name":"music11.mp3","value":"Two Steps From Hell - Victory - 纯音乐版.mp3"},
         {"name":"music12.mp3","value":"张杰 - 逆战.mp3"}];
 }).controller("detailCtr",function($scope,$routeParams){
-    $scope.path=$routeParams.path;
+    $scope.path = '../music/' + $routeParams.path;
 });
-/**
- *文件用途说明:跳跃的标题
- *作者姓名：Jeason_zhang;
- *联系方式：13641638693;Email:Jeason_zhang888@163.com
- *制作日期：2016-08-08 20:33:52
- **/
-//大的模块的注释方式
-//***************************
-//闪烁的标题栏
-//***************************
 var count=0;
 function flashTitle(){
     if(count==0)
@@ -55,6 +45,3 @@ function flashTitle(){
 window.onload=function(){
     setInterval(flashTitle,300);
 }
-
-
-

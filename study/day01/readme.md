@@ -1,7 +1,7 @@
 ## jQuery第一天课程内容
 ### $jQuery优势亮点
 ````html
-1.体积小，灵巧
+1.体积小，灵巧  write less,do more
 2.简化js操作
     例：js  document.getElementById('mainNode') V jQuery  $('#mainNode')  简洁方便
 3.超强的兼容性：各浏览器通用
@@ -15,16 +15,24 @@
 4.基于上述3，封装并提供了各种方法和函数库
 5.链式操作，方便$('#id').removeClass().hide().siblings().addClass().show()……;
 6.ajax封装http请求，并解决原生xhr对象在ie和其它浏览器上的兼容性
-7.$(document).ready(function(){……}); 简化 $(function(){……});
 ````
 ### $基础语法规则  
 ````html 
 1.语法结构：$(dom标识).操作函数()
     例：$('body'),$('<div></div>'),$('#id'),$('.className'),$('h1')
     例：$('ul li').removeClass('className');
-2.链式操作：$(dom标识).操作函数().操作函数().操作函数().操作函数()
+    
+2.如何引用 
+    <script type="text/javascript"></script>
+    window.$ && window.jQuery
+    加载 window.onload  $(function(){})
+    $(document).ready(function(){……}); 简化 $(function(){……});
+
+3.链式操作：$(dom标识).操作函数().操作函数().操作函数().操作函数()
     例：$('ul li').removeClass('className').siblings().addClass('className').show();
-3.演示dom对象和jQuery对象的区别及转换
+
+4.演示dom对象和jQuery对象的区别及转换
+
 ````
 ### $选择器用法、性能、优先级别  
 ````html

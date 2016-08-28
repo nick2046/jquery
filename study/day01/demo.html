@@ -9,11 +9,11 @@
 </head>
 <body>
 	<section class="app">
-		<h1 id="h1">标签选择器</h1>
+		<div id="h1" class="h1"><h2>点击生成第四个li标签</h2></div>
 		<h2>点击生成第四个li标签</h2>
 		<ul>
-			<li>第1个li标签</li>
-			<li>第2个li标签</li>
+			<li>第dgfgfgfg1个fgfdfdfhli标签</li>
+			<li>第2个li标dfd签</li>
 			<li>第3个li标签</li>
 			<li>第4个li标签</li>
 			<li>第5个li标签</li>
@@ -25,27 +25,9 @@
 	</section>
 <script type="text/javascript" src="../lib/common.js"></script>
 <script>
-// $(function(){
-// 	var _el = document.getElementsByTagName('li');
-// 	for(var i = 0;i< _el.length;i++){
-// 		(function(){
-// 			var j = i;
-// 			if( _el[i].addEventListener ){
-// 				_el[i].addEventListener('click',function(e){
-// 					alert(j);
-// 				});
-// 			}else{
-// 				_el[i].attachEvent('click',function(e){
-// 					alert(j);
-// 				});
-// 			}
-// 		})();
-// 	};
+$(function(){
 
-// 	$("li").click(function(e){
-// 		alert($(e.currentTarget).index());
-// 	});
-// })
+})
 // seajs.config({
 // 	base: '/',
 // 	alias: {
@@ -58,12 +40,7 @@
 // seajs.use("main",function(main){
 // 	main.init();
 // });
-window.onload = function(){
-	console.log( +new Date() + ":onload");
-}
-$(document).ready(function(){
-	console.log( +new Date() + ":jQuery");
-});
+
 </script>
 </body>
 </html>

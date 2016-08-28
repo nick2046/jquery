@@ -46,6 +46,7 @@ gulp.task('less', function() {
 gulp.task('look', function() {
     plugins.livereload.listen();
     gulp.watch([srcPath + '**/*.less'], ['less']);
+    gulp.watch([srcPath + '**/*.html'], ['less']);
     gulp.watch([srcPath + '**/*.js','!'+srcPath + '**/*-html.js']).on('change',function(e){
       jsHintrc(e);
     });

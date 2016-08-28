@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<div id="div-box">div节点id</div>
+<div class="div-box">div节点class</div>
+<div>div节点标签</div>
+<div data-type="jquery">自定义方式查询</div>
+<div asdf="asdf">自定义查询2asdf</div>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+
+<!--<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>-->
+<script>
+	// 简化 $(document).ready(function(){})
+	$(function(){
+		// 以id方式获取节点 # + 'id名字'
+		var $el = $("#div-box"); // 返回节点集合
+		// jQuery对象转换为原生对象
+		$el[0];
+
+		// 原生js 操作返回
+		var _el = document.getElementById("div-box");// 返回节点，不是集合
+		// 原生对象转换为jQuery对象
+		$( _el );
+
+		// 以class名字获取对象
+		var $el2 = $('.div-box');
+		// 转换为js原生节点对象
+		$el2[0]
+		// 转换为js原生节点对象后再转为jQuery
+		$( $el2[0] )
+
+		// 通过标签名，获取jquery节点对象
+		var $el3 = $('div');
+		// js原生操作获取
+		document.getElementsByTagName('div')
+
+		/* jQuery获取节点的主要方式
+		* 		# + 'id名'
+		*		. + 'class名'
+		*		标签名
+		* 		自定义查询
+		*/
+		// 自定义查询节点对象
+		$('[data-type="jquery"]');
+		$('[asdf="asdf"]');
+
+		
+
+	})
+</script>
+</body>
+</html>

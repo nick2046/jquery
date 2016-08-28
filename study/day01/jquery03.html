@@ -1,0 +1,28 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div id="div-box">
+		<div class="myclass">Class查询的节点</div>
+	</div>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script>
+	// 节点查询各方式的性能速度
+	$(function(){
+		// 普通的查询
+		document.getElementsByClassName('myclass')
+		// 最快速度，以父级id的方式
+		$('#div-box .myclass')
+		//补充最快的方式
+		var $el = $('#div-box');
+		var $child = $('.myclass' , $el);
+		// 相对比id慢一级的方式
+		$('div.myclass')
+		// 最慢的
+		$('.myclass')
+	})
+</script>
+</body>
+</html>

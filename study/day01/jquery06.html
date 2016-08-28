@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<ul>
+	<li>
+		<a>
+			<div>
+				<span>1234</span>
+			</div>
+		</a>
+	</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// $('ul li').click(function (e){
+		// // e.target 事件的子级对象
+		// // e.currentTarget 返回当前的点击对象
+		// 	var $cur = $(e.currentTarget);
+		// 	// css函数的用法 $cur.css('key','value');
+		// 	// css函数的用法 $cur.css({"key":"value"});
+		// 	// $cur.css('color','red');
+		// 	$cur.css({'color': '#fff','background': 'red'});
+		// 	// html() 获取的是当前节点里面的全部，包括子节点的标签 如 "<a>1</a>"
+		// 	// text() 获取的是当前节点里面的文本，不包括标签，返回"1"，不包括a标签
+		// 	// alert( $cur.html() );
+		// 	alert( $cur.text() )
+		// });
+		// bind()  delegate()
+
+		// 动态绑定事件 绑定在父级节点ul上，通过冒泡查找执行
+		// on绑定事件 .on('事件','节点',function(){})
+		// off()取消绑定事件
+		// e.target 指向冒泡事件触发的第一个节点
+		// e.currentTarget 指向绑定事件的元素
+		$('ul').on('click','li',function(e){
+			console.log('click 事件')
+			var $cur = $(e.currentTarget);
+			// console.log( $(e.target) );
+			// console.log( $(e.currentTarget) );
+			// 取消绑定事件
+			$('ul li').off('click');
+			// $cur.css({'color': '#fff','background': 'red'});
+		});
+
+		// hover事件 事件机制与click一样 hover
+		// $('ul li').hover(function(e){
+		// 	console.log("hover on");
+		// },function(e){
+		// 	console.log("hover out");
+		// });
+
+		// .index() 获取当前对象的下标
+		console.log( $('ul li:eq(1)').index() ) 
+		var index = $().index()
+		$('ul li:eq('+ index +')')
+
+
+
+
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.nav-box span{
+			display: inline-block;
+			width: 80px;
+			line-height: 40px;
+			text-align: center;
+			background: green;
+			color: #fff;
+			cursor: pointer;
+			margin-right: 20px;
+			border-radius: 4px;
+		}
+		.nav-box span.active{
+			background: #d3d3d3;
+			color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="nav-box">
+		<span class="active">点击元素1</span>
+		<span>点击元素2</span>
+		<span>点击元素3</span>
+	</div>
+
+	<div class="show-box">
+		<div>显示内容1</div>
+		<div style="display:none;">显示内容2</div>
+		<div style="display:none;">显示内容3</div>
+	</div>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.nav-box span').click(function(e){
+			var $cur = $(e.currentTarget);
+			var $showBox = $('.show-box div');
+			$cur.addClass('active').siblings().removeClass('active');
+			$showBox.eq( $cur.index() ).show().siblings().hide();
+		})
+	})
+</script>
+</body>
+</html>

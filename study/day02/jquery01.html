@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<p class="myclass" data-type="test">标尺位置P标签</p>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// js document.createElement('li')
+		// jquery $('<li></li>') $('</li>')
+		// 推荐使用第一种方式
+		// append() 在元素内部的最后增加节点
+		$('body').append( '<li style="color:red;" class="active">动态增加的节点</li>' );
+
+		// appendTo() 与append()相似，操作对象互换
+		$('<li style="color:red;" class="active">动态增加的节点第二个</li>').appendTo( $('body') );
+
+		// prepend() 在元素内部的最前面增加节点
+		$('body').prepend('<li style="color:green;">动态增加第三个prepend</li>')
+		// prependTo() 与prepend()相似，操作对象互换
+		$('<li style="color:green;" class="active">动态增加的节点第四个prependTo</li>').prependTo( $('body') );
+
+		// after() 在元素的后面增加节点
+		$('p.myclass').after('<p>放置在p后面的第二个p标签</p>');
+		// before() 在元素的前面增加节点
+		$('p.myclass').before('<p>放置在p前面的第三个p标签</p>');
+
+		// remove() 删除节点 
+		// removeClass() 去掉节点对象的class
+
+		// removeAttr() 去掉节点对象的属性
+		// attr 包括在标签上的所有“=”赋值的属性,比如自定义的 <li data-type="asdf">data-type就是属性</li>
+
+		// attr() 获取当前节点的属性值 
+		$('p.myclass').attr('data-type');
+		// css() 专用来修改样式style
+		// attr() 赋值当前节点的属性值
+		$('p.myclass').attr('data-type', 'test2');
+
+		// insertAfter() 把元素放置在节点的后面
+		// 与after()相似，把操作对象互换
+		$('<li>insertAfter</li>').insertAfter( $('p.myclass') );
+		// insertBefore() 把元素放置在节点的前面
+		// 与before()相似，把操作对象互换
+		$('<li>insertBefore</li>').insertBefore( $('p.myclass') );
+
+
+	});
+</script>
+</body>
+</html>

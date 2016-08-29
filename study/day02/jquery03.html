@@ -1,0 +1,112 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<ul class="class-ul">
+	<li>0</li>
+	<li><p>p标签包括的对象</p></li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li></li>
+</ul>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			method: 'post',
+            url: 'http://192.168.254.172:3000/User/getUserInfo',
+            data: {
+                id: '9527'
+            },
+            success: function(res){
+            	console.log(res)
+            }
+		})
+		// $('ul li:first') 获取集合中的第一个元素
+		// 等同于 $('ul li').first()
+		// $('ul li:first').css(
+		// 	{
+		// 		background: 'red',
+		// 		color: 'green'
+		// 	}
+		// );
+
+		// $('ul li:last') 获取集合中的最后一个元素
+		//等同于$('ul li').last()
+		// $('ul li:last').css(
+		// 	{
+		// 		background: 'green',
+		// 		color: 'red'
+		// 	}
+		// );
+		// $('ul li:eq(3)') 获取集合中下标为3的元素
+		// 等同于$('ul li').eq(3)
+
+		// $('ul li:even') 集合中下标为偶数的元素，设置样式
+		// $('ul li:even').css({
+		// 	background: 'green',
+		// 	color: 'red'
+		// });
+		// $('ul li:odd') 集合中下标为奇数的元素，设置样式
+		// $('ul li:odd').css({
+		// 	background: 'red',
+		// 	color: 'green'
+		// });
+
+		// gt下标大于>  lt下标小于< 
+		// $('ul li:gt(1)').css({
+		// 	background: '#d3d3d3',
+		// 	color: '#fff'
+		// })
+		// $('ul li:lt(2)').css({
+		// 	background: '#d3d3d3',
+		// 	color: '#fff'
+		// });
+
+		// :has(p) 对集合过滤，选取出含有p子元素的节点对象
+		// $('ul li:has(p)')
+
+		// :contains() 
+		// 获取集合中含有某一文本内容的节点对象
+		$('ul li:contains(p)').css({
+			background: 'red'
+		})
+
+		// :empty()
+		// 获取集合中不含有子元素及文本的节点对象，纯空的
+		$('ul li:empty()').css({
+			padding: '10px 20px',
+			background: 'blue'
+		}).text('之前为空的节点')	
+
+		// :hidden 获取集合中隐藏的元素
+		// :visible 获取集合中可见的元素
+		$('ul li:last').hide();
+		console.log( $('ul li:hidden').text() )
+		$('ul li:visible').css({
+			background: '#000'
+		})
+
+		// :not(selector) 获取集合中非 selector 的元素
+		// $('ul li:not(:eq(3))')
+		// $('ul li:not(.myclass)')
+		// $('ul li:not(p)')
+
+		//.is(selector) 用来判断是否是 selector 返回 true || false
+		// 判断第一个li标签是否是隐藏
+		$('ul li:first').is(':hidden')
+		// 判断第一个li标签是否是可见
+		$('ul li:first').is(':visible')
+
+
+
+
+
+
+	});
+</script>
+</body>
+</html>

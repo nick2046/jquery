@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body style="position: relative">
+	<div class="btn">点击这里</div>
+	<div style="position: absolute;left:50px;width: 50px;height: 50px;background: green;" id="iframe"></div>
+	<script src="../lib/jquery-3.1.0.min.js"></script>
+	<script>
+		/* 对比变化过程中改变的有哪些属性
+		 * hide()
+		 * hide(3000)
+		 * hide('slow')
+		 * hide('normal')
+		 * hide('fast') 
+		 * toggle(3000,callback)
+		 * toggle(true)
+		 * toggle(3000,callback,true) 同 toggle(true)
+		 * fadeIn() 改变了哪些属性
+		 * fadeOut()  透明度
+		 * slideUp() 高度
+		 * slideDown()
+		 *
+		 * animate( prarm, speed, cb )
+		 * animate({left: ''500px}, 3000) 
+		 * animate({left: '+=50px'},300) 在现在位置基础上进行加减换算 style left:50px 则+=500px 就是550px
+		 * animate({left: '500px',height: '300px'},3000) 同时进行两个属性的改变
+		 * animate({left: '500px'},3000).animate({width: '500px'},3000) 按顺序执行  动画队列
+		 * stop( 是否清空后面的动画队列, 是否立马执行当前动画到末状态)
+		 * .delay( 3000 )停顿3000毫秒再执行函数
+		 */
+		$(function(){
+			$('.btn').click(function(e){
+				$('#iframe').delay( 3000 ).animate({left: '+=500px'},3000,function(){
+					// 动画结束
+				}); // left 550px
+			});
+		});
+	</script>
+</body>
+</html>

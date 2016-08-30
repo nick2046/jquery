@@ -38,15 +38,16 @@ gulp.task('less', function() {
         }))
         .pipe(plugins.livereload());
 });
-
-
 /*
  * @desc less html变化 刷新浏览器 livereload
  */
 gulp.task('look', function() {
     plugins.livereload.listen();
     gulp.watch([srcPath + '**/*.less'], ['less']);
-    gulp.watch([srcPath + '**/*.html'], ['less']);
+    gulp.watch([srcPath + '**/*.html']).on('change',function(e){
+        gulp.src( e.path,{ base: srcPath } )
+        .pipe(plugins.livereload());
+    });
     gulp.watch([srcPath + '**/*.js','!'+srcPath + '**/*-html.js']).on('change',function(e){
       jsHintrc(e);
     });

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+
+	<!-- CDN  -->
+	<script src="jQuery/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<script>
+	     //DOM树创建完成   DOMContentLoaded
+	    // $(document).ready(function(){});
+	    //简写形式
+		$(function(){
+			 // $(document)
+          //选择器: 命中元素
+          $('#id')         id 选择器
+          $('.className')  类选择器
+          $('tagName')     元素选择器
+          $('*')           选中所有的元素
+          $('#id','.class','selector') 分组选择器
+
+          //后代选择器
+          $('祖先  后代')  
+          $('parent>child')  孩子选择器，不包含孙子节点
+          $('prev+next')     自己的下一个紧邻的兄弟   $("prev").next()
+          $('prev~sibling')  自己的后面的所有的兄弟  $('prev').nextAll()
+           
+          $('prev').prev(); 前一个紧邻的兄弟
+          $('prev').prevAll(); 前面所有的兄弟
+          $('prev').siblings();//与自己同级别的所有兄弟
+
+          //过滤选择器
+          $('ul li:first')  ->  $('ul li').first();
+          $('ul li:last')   ->  $('ul li').last()
+          $('ul li:not(selector)'); 不满足指定的选择器的所有ul li 元素
+          $('ul li:even')  偶数  //0 2 4 ...
+          $('ul li:odd')   奇数  //1 3 5 ...
+          
+          $('ul li:eq(index)') //index 0 1 2 .... 查找第几个元素
+          ->$('ul li').eq(index);
+          $('ul li:gt(index)')  //大于 index  从 0 开始  
+          $('ul li:lt(index)')  //小于 index  从 0 开始
+          $(":header")   //选取网页中的h1,h2,h3....h6
+          $('ul li:animated') //选择正在执行动画的li元素
+          
+          //判断一个元素是否正在执行动画
+          if( $('ul li:eq(0)').is(':animated') ){
+
+          }
+
+          $('input:focus')   获取焦点的元素
+       
+          //内容过滤的选择器
+          $('ul li:contains(text)')  //选中文本内容包含text字符的li标签
+          // <ul>
+          // 	<li>aaatestbbb</li>
+          // 	<li>aabbccc</li>
+          // </ul>
+          $('ul li:contains("test")')   // 第一个li命中
+          //和is 一起使用
+          if( $('ul li:eq(0)').is(":contains('test')") )
+           
+
+          $('li:empty')   选中空的标签，既不包含子元素也包含文本
+          //判断一个元素是否为空标签
+          if( $('ul li:eq(0)').is(':empty') )
+
+          $('ul li:has(selector)') //如果li中的子元素满足selector，该li被命中
+          -> $('ul li').has('selector')  
+
+          // <ul>
+          // 	<li><span>aaa</span></li>
+          // 	<li>bbb</li>
+          // 	<li>cccc</li>
+          //    <li></li>
+          // </ul>
+
+          // $('ul li:has("span")')  选中第一个
+          // $('ul li').has('span')  等价
+
+           $('ul li:parent') //命中包含子元素或文本元素的li标签
+           
+           //属性选择器，跟css 中的属性选择器一致
+           // <ul>
+           // 	<li people='abc'></li>
+           // </ul>
+           $('ul li[people]')             有people属性
+           $('ul li[people=value]')       people属性等于value
+           $('ul li[people!=value]')      people属性不等于value
+           $('ul li[people^=value]')      people属性以value开头
+           $('ul li[people$=value]')      people属性以value结尾
+           $('ul li[people*=value]')      people属性包含value字符串
+           $('ul li[people|=value]')      people的属性为value 或value-开头
+           $('ul li[people~=value]')      people的属性为空格分隔的多组值，其中一个是value
+
+
+           //子元素过滤选择器
+           $('ul li:eq(index)') //选择第index个li  index 0 开始
+
+           //选择第index孩子，并且该孩子为li 命中，index 从1开始
+           $('ul li:nth-child(index)')   //从 1 开始 第index个孩子
+           
+           $('ul li:nth-child(even)')    //从1 开始 选择偶数的孩子2  4 6 8，并且为li
+           $('ul li:nth-child(odd)')   // 选择 1 3 5 7 孩子 并且为li
+           $('ul li:nth-child(3n+1)')  //n 从 0 开始
+
+         // 表单选择器，是根据input 元素的type类型来选择
+         //   <input type="text" name="" value="" placeholder="">
+         //   <input type="password" name="" value="" placeholder="">
+         //   <input type="button" name="" value="" placeholder="">
+         //   <input type="submit" name="" value="" placeholder="">
+
+         //    $(':input')  //input textarea  select button 等元素
+	        // $(':text')
+	        // $(':password')
+	        // $(':radio')
+	        // $(':checkbox')
+	        // $(':submit')
+	        // $(':reset')
+	        // $(':button')
+	        // $(':file')
+
+            //checkbox radio 命中选中的元素
+	        $(':checked')
+
+	        //select 空间，命中选中的option
+            $(':selected')
+
+	        //可见性，元素正常显示  display：block
+	        $(":visible")
+	        if( $('el').is(":visible") )
+
+            //元素不显示 display：none
+	        $(':hidden')   
+	        if( $('el').is(":hidden") ) 
+	        
+		});
+	</script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 </head>
 <body>
 <form>
+	
 	<input type="text" name="id" value="9527">
 </form>
 <script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
@@ -22,7 +23,7 @@
 			}
 		}
 	};
-	xhr.open('post','http://192.168.254.172:3000/User/getUserInfo' );
+	xhr.open('post','http://10.48.0.89:3000/User/getUserInfo' );
 	//把字符串类型的参数序列化为Form Data
 	xhr.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
 	xhr.send( $("form").serialize() );

@@ -7,15 +7,17 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<form action="http://192.168.254.172:3000/User/getUserInfo" method="post">
+
+	
+	<form action="http://10.48.0.89:3000/User/getUserInfo" method="post">
 		<input type="text" name="id" value="9527">
-		<div id="submit">点击提交</div>
+		<button type="submit">点击提交</button>
 	</form>
 	<script src="../lib/jquery-3.1.0.min.js"></script>
 	<script>
 		$("#submit").click(function(){
 			$.ajax({
-				url: 'http://192.168.254.172:3000/User/getUserInfo',
+				url: 'http://10.48.0.89:3000/User/getUserInfo',
 				data: {
 					id: '9527'
 				},

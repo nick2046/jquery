@@ -7,11 +7,25 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	
+	<form action="http://192.168.254.172:3000/User/getUserInfo" method="post">
+		<input type="text" name="id" value="9527">
+		<div id="submit">点击提交</div>
+	</form>
 	<script src="../lib/jquery-3.1.0.min.js"></script>
 	<script>
-		$("button").click(function(){
-		  $("div").text($("form").serialize());
+		$("#submit").click(function(){
+			$.ajax({
+				url: 'http://192.168.254.172:3000/User/getUserInfo',
+				data: {
+					id: '9527'
+				},
+				dataType: 'json',
+				type: 'post',
+				success: function(res){
+					console.log(res)
+				}
+			})
+		  //$("div").text($("form").serialize());
 		});
 	</script>
 </body>

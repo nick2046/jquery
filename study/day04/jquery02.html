@@ -4,11 +4,7 @@
 	<title></title>
 </head>
 <body>
-<form>
-	
-	<input type="text" name="id" value="9527">
-</form>
-<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+
 <script type="text/javascript">
 	var xhr = null;
 	if( window.XMLHttpRequest ){
@@ -16,17 +12,35 @@
 	}else{
 		xhr = new ActionXObject('Microsoft.XMLHTTP')
 	}
-	xhr.onreadystatechange = function(){
-		if( xhr.readyState == 4 ){
-			if( xhr.status == 200 ){
-				console.log( xhr.responseText )
-			}
+	// onload 此时的状态已经是请求发送成功，后端已经进行了响应 readyState == 4
+	xhr.onload = function(){
+		if( xhr.status == 200 ){
+			console.log("responseText: " + xhr.responseText );
+			// 返回xml文本格式，现在用的不多
+			// 如果传输的数据格式要求xml时候，从这个字段取值 没有时候，为 null
+			console.log( "responseXML: " + xhr.responseXML );
 		}
-	};
-	xhr.open('post','http://10.48.0.89:3000/User/getUserInfo' );
+	}
+	// xhr.onreadystatechange = function(){
+	// 	if( xhr.readyState == 4 ){
+	// 		if( xhr.status == 200 ){
+	// 			console.log( xhr.responseText )
+	// 		}
+	// 	}
+	// };
+	xhr.open('get','http://10.48.0.41:3000/User/ getUserInfoByGet?id=1601&name=yinguit' );
 	//把字符串类型的参数序列化为Form Data
 	xhr.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
-	xhr.send( $("form").serialize() );
+	xhr.send( null );
+
+	// get请求的转码
+	// encodeURI("中国") 转码
+	// decodeURI( encodeURI("中国") ) 解码
+
+	// encodeURIComponent("中国") 转码
+	//	"%E4%B8%AD%E5%9B%BD"
+	//decodeURIComponent("%E4%B8%AD%E5%9B%BD") 解码
+	//	"中国"
 </script>
 </body>
 </html>

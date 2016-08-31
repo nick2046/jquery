@@ -1,0 +1,21 @@
+接口地址：
+	/User/getImgSlide
+request prarms
+	{
+		"id": "1601",
+		"name": "yinguit"
+	}
+response 
+	{
+		resultCode: "000000",
+		result: [
+			{
+				imgUrl:"图片地址",
+				alt: "第一张图片"
+			},
+			{
+				imgUrl:"图片地址",
+				alt: "第一张图片"
+			}
+		]
+	}

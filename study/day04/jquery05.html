@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	// $.ajax()
+	$.ajax({
+		url: '', //必填 接口地址
+		data: {
+			"id": "1601",
+			"name": "yinguit"
+		}, // 如果后端没有要求给参数，此项可以不填
+		type: "get", // get 或 post请求
+		async: true, // 非必填，默认 true 是否异步
+		timeout: 3000,// 超时时间，非必填，默认值0，不加时间限制
+		success: function( res, status, xhr ){
+		// 接口返回成功后 执行的函数
+		},
+		error: function(xhr, status, error){
+			// 接口请求失败后，执行的函数
+		},
+		complete: function (xhr, status){
+			// 网络请求完成 complete 在success函数之后执行 
+			//参数与上面的success不一样，【注意】
+		}
+	});
+	// 通过 getScript 函数，动态获取脚本文件 按需加载
+	// $.getScript('url', function( res, status ){})
+</script>
+</body>
+</html>

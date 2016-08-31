@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<script src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	// get() 以get方式请求接口
+	// post() 以post方式请求接口
+	// ajax() 请求接口，可以指定请求方式
+	// getScript() 获取js脚本
+
+	// ( url, data, callback(), dataType )
+	// 第四个参数为要求返回的数据结构，可以不写，不写时候，会自动进行判断转换
+	// 接口地址，入参，执行接口成功后要做的事情
+	$.get(
+		'http://10.48.0.41:3000/User/getImgSlide',
+		{id: '1601',name: "yinguit"},
+		// callback( res, status, xhr )
+		// res 后端返回的数据
+		// status jQuery对状态码解析后的字符串 success error 等
+		// xhr 发起网络请求的原生对象
+		function (res, status, xhr){
+			console.log( res )
+		}
+	);
+	// $.post() 与$.get()用法基本一致，两者对原生的get和post进行了封装
+
+</script>
+</body>
+</html>

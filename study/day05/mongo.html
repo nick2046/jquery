@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<div id="post">
+	<input type="text" name="userid" placeholder="请输入用户id">
+	<input type="text" name="username" placeholder="请输入用户名">
+	<button type="button">添加用户</button>
+</div>
+
+<div id="get">
+	<input type="text" name="userid" placeholder="请输入用户id">
+	<button type="button">查找用户</button>
+</div>
+
+<script type="text/javascript" src="../lib/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	$("#post button").click(function(e){
+		$.ajax({
+			url: "http://10.48.0.41:3000/User/addUser",
+			type: "post",
+			data: {
+				userid: $('#post input[name="userid"]').val(),
+				username: $('#post input[name="username"]').val()
+			},
+			success: function (res){
+				if( res.resultCode == "000000" ){
+					alert( res.resultMsg );
+				}else{
+					alert( res.resultMsg )
+				}
+			}
+		})
+	});
+	$("#get button").click(function(){
+		$.ajax({
+			url: "http://10.48.0.41:3000/User/getUserByUserId",
+			type: "get",
+			data: {
+				userid: $('#get input[name="userid"]').val()
+			},
+			success: function (res){
+				if( res.resultCode == "000000" ){
+					if( res.result && res.result.length > 0 ){
+						alert( '数据查询成功，用户名：' + res.result[0].username )
+					}else{
+						alert("查无此id用户")
+					}
+				}else{
+					alert( res.resultMsg )
+				}
+			}
+		});
+	})
+
+</script>
+</body>
+</html>

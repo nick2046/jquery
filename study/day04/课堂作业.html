@@ -40,37 +40,39 @@
 			"id": "1601",
 			"name": "yinguit"
 		},
+		type: "post",
 		success: function (res){
 			var imgArr = res.result;
 			for( var i = 0; i < imgArr.length;i++ ){
-				console.log( "第"+i+"个图片地址：" + imgArr[i].imgUrl );
+				$("#box .imgcontainer").append('<li><img src="'+ imgArr[i].imgUrl +'" alt=""></li>');
+
+				$("#box .indicator").append( '<li>'+(i+1)+'</li>' );
+				// console.log( "第"+i+"个图片地址：" + imgArr[i].imgUrl );
 			}
+			$("#box .indicator li").eq(0).addClass("hover");
+
+			var index = 0;
+			var timer = setInterval(runloop,2000);
+			function runloop(){
+			   index++; 
+	           if(index == imgArr.length) index = 0;
+	           $('.imgcontainer').css({'left':-index*200+'px'});
+	           $('.indicator li').eq(index).addClass('hover').siblings().removeClass('hover');
+			}
+
+	       $('.indicator li')
+	       .mouseover(function(){
+	       	  clearInterval(timer);
+	          index = $(this).index();
+	          $('.imgcontainer').css('left',-index*200+'px');
+	          $('.indicator li').eq(index).addClass('hover').siblings().removeClass('hover');
+	       })
+	       .mouseout(function(){
+	          index = $(this).index();
+	          timer = setInterval(runloop,2000);
+	       });
 		}
 	});
-
-	// $( function() {
-	// 	var index = 0;
-	// 	var timer = setInterval(runloop,2000);
-	// 	function runloop(){
-	// 	   index++; 
- //           if(index == 5) index = 0;
- //           $('.imgcontainer').css({'left':-index*200+'px'});
- //           $('.indicator li').eq(index).addClass('hover').siblings().removeClass('hover');
-	// 	}
-
- //       $('.indicator li')
- //       .mouseover(function(){
- //       	  clearInterval(timer);
- //          index = $(this).index();
- //          $('.imgcontainer').css('left',-index*200+'px');
- //          $('.indicator li').eq(index).addClass('hover').siblings().removeClass('hover');
- //       })
- //       .mouseout(function(){
- //          index = $(this).index();
- //          timer = setInterval(runloop,2000);
- //       });
-
-	// });
 	</script>
 </body>
 </html>

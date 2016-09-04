@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.fn-clear:after {
+		    visibility: hidden;
+		    display: block;
+		    font-size: 0;
+		    content: " ";
+		    clear: both;
+		    height: 0
+		}
+		.fn-clear {zoom:1}
+
+		.box{
+			margin: 80px auto;
+			width: 100px;
+			position: relative;
+		}
+		.box ul{
+			list-style: none;
+		}
+		.box li{
+			float: left;
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+		}
+		.star-img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+			width: 80px;
+			height: 16px;
+			background: url(images/star-matrix.gif);
+			background-position: 0px 0px;
+		}
+		div.star-img.hover0{
+			background-position: 0px -96px;
+		}
+		div.star-img.hover1{
+			background-position: 0px -112px;
+		}
+		div.star-img.hover2{
+			background-position: 0px -128px;
+		}
+		div.star-img.hover3{
+			background-position: 0px -144px;
+		}
+		div.star-img.hover4{
+			background-position: 0px -160px;
+		}
+		.star-img.click0{
+			background-position: 0px -16px;
+		}
+		.star-img.click1{
+			background-position: 0px -32px;
+		}
+		.star-img.click2{
+			background-position: 0px -48px;
+		}
+		.star-img.click3{
+			background-position: 0px -64px;
+		}
+		.star-img.click4{
+			background-position: 0px -80px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="fn-clear">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="star-img"></div>
+	</div>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".box li").mousemove(function(){
+				var _index = $(this).index();
+				$('.star-img').addClass('hover' + _index)
+			}).mouseout(function(event) {
+				/* Act on the event */
+				var _index = $(this).index();
+				$('.star-img').removeClass('hover' + _index);
+			}).click(function(){
+				var _index = $(this).index();
+				$('.star-img').attr("class","star-img").addClass('click' + _index);
+			});
+		})
+	</script>
+</body>
+</html>

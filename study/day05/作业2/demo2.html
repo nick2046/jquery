@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0;font-family: "宋体"; }
+		li{ list-style: none; }
+		a{ text-decoration: none;color: #000; }
+		p{ font-size: 12px; }
+		.clear:after{ content: "";display: block;clear: both;height: 0px;overflow: hidden; }
+		.clear{ -ms-zoom: 1; }
+		#top{ background: url(images/headerbg.png) repeat-x;height: 100px; }
+		#top>.top-box{ margin: 0 auto;width: 990px;position: relative;}
+
+		#top>.top-box>.title{ height: 60px; }
+		#top>.top-box>.title>.text{ position: absolute;top: 20px;height: 25px;font-size: 14px; }
+
+		#top>.top-box>.color{position: absolute;right: 0px;top: 15px;}
+		#top>.top-box>.color>li{ float: left;width: 15px;height: 15px;margin-right: 5px;background:  url(images/theme.gif) 0 0 no-repeat; }
+		#top>.top-box>.color>li:nth-child(1){ background-position: 0 -15px; }
+		#top>.top-box>.color>li:nth-child(2){ background-position: -20px 0px; }
+		#top>.top-box>.color>li:nth-child(3){ background-position: -40px 0px; }
+		#top>.top-box>.color>li:nth-child(4){ background-position: -60px 0px; }
+		#top>.top-box>.color>li:nth-child(5){ background-position: -80px 0px; }
+		#top>.top-box>.color>li:nth-child(6){ background-position: -100px 0px; }
+
+		#top>.top-box>.nav{ background-color: #4a4a4a;height: 40px;padding-left: 30px; }
+		#top .nav .nav-content>ul{float: left;height: 40px;margin-right: 30px;  position: relative;}
+		#top .nav .nav-content .menu1{ line-height: 40px; }
+		#top .nav .nav-content .menu1>a{ font-weight: bold;color: #fff;display: block;height: 40px; }
+		#top .nav .nav-content>ul .menu2{ width: 470px;height: 60px;}
+		#top .nav-content .menu2 p{ float: left; }
+		#top .nav-content .menu2 .text1{ font-size: 12px;font-weight: bold;margin:0 30px; }
+		#top .nav-content .menu2 .text2{ width: 370px;float: right;padding-right: 20px;box-sizing: border-box; }
+		#top .nav-content .menu2 .text2>a{font-size: 13px;color: #808080;padding-right: 10px;border-right: 1px solid #d3d3d3;}
+		#top .nav-content .menu2-box{ position: absolute;display: none;z-index: 1; }
+		#top .nav-content .menu2-box li:first-child{ border-bottom: 1px dashed #808080; }
+
+		#content{ margin: auto;width:990px;margin-top: 15px; }
+
+		#content .left{ width: 185px;border: 1px solid #808080;float: left;box-sizing: border-box; }
+		.left-content .left-content-title{ font-size: 14px;background-color: #6e6e6e; height: 30px;line-height:30px;color:#fff;padding-left: 10px;}
+		.title{ font-size: 14px;font-weight: bold;height: 25px;line-height: 25px;border-bottom: 1px solid #d3d3d3; }
+		.left-content .text-box p{float: left;width: 80px;margin-bottom: 10px;  }
+		.left-content .left-content-li{ padding-left: 10px; }
+		.left-content-li .text-box{ margin-top: 10px; }
+		.text-box .hot{position: relative;color: red;}
+		.hot>.icon{ width: 21px;height: 16px;position: absolute;background:  url(images/hot.gif)  no-repeat;top:-10px; }
+
+		#content .right{ float:left;;width: 800px;box-sizing: border-box; }
+
+		.footer{width: 990px;margin:10px auto;text-align: center;font-size: 14px;color: #808080;}
+		#sp{ width: 218px;height: 230px;position: absolute;left: 0px;top: 0px; }
+
+		.right-l{ width: 270px;margin-left: 10px;box-sizing: border-box; }
+		.right-l .banner{ width: 270px;height: 270px;padding: 10px;box-sizing: border-box; border: 1px solid #d3d3d3;text-align: center;margin-bottom: 30px;}
+		.right-l .banner img:first-child{ width: 250px;height: 250px; }
+		.right-l .banner .look{ margin-top: 10px; }
+		.right-l .small img{width: 60px;height: 60px;  }
+
+		div.zoomDiv{z-index:999;position:absolute;top:0px;left:0px;width:200px;height:200px;background:#ffffff;border:1px solid #CCCCCC;display:none;text-align:center;overflow:hidden;}
+		div.zoomMask{position:absolute;background:url("http://demo.lanrenzhijia.com/2015/jqzoom0225/images/mask.png") repeat scroll 0 0 transparent;cursor:move;z-index:1;}
+	</style>
+</head>
+<body>
+	<div id="top">
+		<div class="top-box">
+			<div class="title">
+				<a href="#" title=""><img src="images/logo.gif" alt=""></a>
+				<input class="text" type="text" name="" placeholder="请输入商品名称">
+			</div>
+			<ul class="color clear">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="nav">
+				<ul class="nav-content clear">
+					<ul>
+						<li class="menu1"><a href="#" title="">首页</a></li>
+					</ul>
+					<ul>
+						<li class="menu1"><a href="#" title="">品牌</a></li>
+					</ul>
+					<ul>
+						<li class="menu1"><a href="#" title="">女装</a></li>
+						<div class="menu2-box" >
+							<li class="menu2 clear">
+							<p class="text1">女装:</p>
+							<p class="text2">
+								<a href="#" title="">耐克</a>
+								<a href="#" title="">阿迪达斯</a>
+								<a href="#" title="">达芙妮</a>
+								<a href="#" title="">李宁</a>
+								<a href="#" title="">安踏</a>
+								<a href="#" title="">奥康</a>
+								<a href="#" title="">骆驼</a>
+								<a href="#" title="">特步</a>
+								<a href="#" title="">耐克</a>
+								<a href="#" title="">阿迪达斯</a>
+								<a href="#" title="">达芙妮</a>
+								<a href="#" title="">李宁</a>
+								<a href="#" title="">特步</a>
+							</p>
+						</li>
+						<li class="menu2 clear">
+							<p class="text1">女装:</p>
+							<p class="text2">
+								<a href="#" title="">耐克</a>
+								<a href="#" title="">阿迪达斯</a>
+								<a href="#" title="">达芙妮</a>
+								<a href="#" title="">李宁</a>
+								<a href="#" title="">安踏</a>
+								<a href="#" title="">奥康</a>
+								<a href="#" title="">骆驼</a>
+								<a href="#" title="">特步</a>
+								<a href="#" title="">耐克</a>
+								<a href="#" title="">阿迪达斯</a>
+								<a href="#" title="">达芙妮</a>
+								<a href="#" title="">李宁</a>
+								<a href="#" title="">特步</a>
+							</p>
+						</li>
+						</div>
+						
+					</ul>
+					<ul>
+						<li class="menu1"><a href="#" title="">男装</a></li>
+					</ul>
+					<ul>
+						<li class="menu1"><a href="#" title="">鞋包配饰</a></li>
+					</ul>
+				</ul>	
+			</div>	
+		</div>
+	</div>
+	<div id="content" class="clear">
+		<div class="left">
+			<ul class="left-content">
+				<h2 class="left-content-title">商品分类</h2>
+				<li class="left-content-li">
+					<h2 class="title">推荐</h2>
+					<div class="text-box clear">
+						<p>耐克</p>
+						<p class="hot">阿迪达斯<span class="icon"></span></p>
+						<p>达芙妮</p>
+						<p>李宁</p>
+						<p>安踏</p>
+						<p>奥康</p>
+						<p class="hot">骆驼<span class="icon"></p>
+						<p>特步</p>
+					</div>
+				</li>
+				<li class="left-content-li">
+					<h2 class="title">女装</h2>
+					<div class="text-box clear">
+						<p>呢大衣</p>
+						<p>T恤</p>
+						<p>羽绒</p>
+						<p>衬衫</p>
+						<p>羊绒衫</p>
+						<p>针织</p>
+						<p>连衣裙</p>
+						<p>皮外套</p>
+					</div>
+				</li>
+				<li class="left-content-li">
+					<h2 class="title">男装</h2>
+					<div class="text-box clear">
+						<p>衬衫</p>
+						<p>T恤衫</p>
+						<p>夹克</p>
+						<p>大皮衣</p>
+						<p>风衣</p>
+						<p>牛仔裤</p>
+						<p>西服</p>
+						<p>卫衣</p>
+					</div>
+				</li>
+				<li class="left-content-li">
+					<h2 class="title">鞋包装饰</h2>
+					<div class="text-box clear">
+						<p>围巾</p>
+						<p>旅行箱</p>
+						<p>真皮包</p>
+						<p>韩版</p>
+						<p>达芙妮</p>
+						<p>单肩包</p>
+						<p>毛线</p>
+						<p>清仓靴子</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="right clear">
+			<div class="right-l">
+				<div class="banner">
+				<div>
+				    <img class="jqzoom" src="images/pro_img/blue_one_small.jpg" rel="images/pro_img/blue_one_big.jpg">
+				</div>
+				<img class="look" src="images/look.gif" alt="">
+				</div>
+				<div class="small">
+					<img src="images/pro_img/blue_one.jpg" alt="">
+					<img src="images/pro_img/blue_two.jpg" alt="">
+					<img src="images/pro_img/blue_three.jpg" alt="">
+				</div>
+			</div>
+			<div class="right-r"></div>
+		</div>
+		
+	</div>
+	<div class="footer">
+		<p>Copyright ©2009 - 2012 JaneShop Inc.</p>
+	</div>
+	<span id="sp"></span>
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script src="jquery.imagezoom.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".jqzoom").imagezoom({
+			xzoom: 310,
+			yzoom: 310,
+			offset: 15
+		});
+	})
+	</script>
+</body>
+</html>
